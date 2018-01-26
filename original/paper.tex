@@ -1,0 +1,162 @@
+%\documentclass{sig-alternate}
+\documentclass[conference]{IEEEtran}
+%\documentclass[conference]{IEEEtran}
+%\documentclass[letterpaper,twocolumn,10pt]{article}
+%\usepackage{usenix,epsfig,endnotes}
+%\pagestyle{plain}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{shortcuts}
+\usepackage{xspace}
+\usepackage{code}
+\usepackage{cite}
+\usepackage{subcaption}
+\usepackage{footnote}
+\usepackage{tikz}
+%\usepackage{times}
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+\usepackage{mathtools}
+%\usepackage[affil-it]{authblk}
+%\usepackage[T1]{fontenc}
+%\usepackage{mathptmx}
+\usepackage{url}
+\usepackage{chngcntr}
+\usepackage{listings, color, caption}
+\usepackage{threeparttable}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{pifont}
+\usepackage{soul}
+\usepackage{boxedminipage}
+\usepackage[text={7in,9.25in},centering]{geometry}
+\usepackage[lined, boxed, commentsnumbered, linesnumbered]{algorithm2e}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+%\counterwithout{paragraph}{section}
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% limits underneath
+\DeclareMathOperator*{\argminA}{arg\,min} % Jan Hlavacek
+\DeclareMathOperator*{\argminB}{argmin}   % Jan Hlavacek
+\DeclareMathOperator*{\argminC}{\arg\min}   % rbp
+\DeclareMathOperator*{\argmax}{argmax} 
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+\newcommand{\argminD}{\arg\!\min} % AlfC
+
+\newcommand{\argminE}{\mathop{\mathrm{argmin}}}          % ASdeL
+\newcommand{\argminF}{\mathop{\mathrm{argmin}}\limits}   % ASdeL
+
+% limits on side
+\DeclareMathOperator{\argminG}{arg\,min} % Jan Hlavacek
+\DeclareMathOperator{\argminH}{argmin}   % Jan Hlavacek
+\newcommand{\argminI}{\mathop{\mathrm{argmin}}\nolimits} % ASdeL
+
+\newcommand{\cs}[1]{\texttt{\symbol{`\\}#1}}
+
+\graphicspath{ {images/} }
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{innercustomdfn}{Definition}
+\newenvironment{customdfn}[1]
+  {\renewcommand\theinnercustomdfn{#1}\innercustomdfn}
+  {\endinnercustomdfn}
+
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    %ndkeywordstyle=\color{darkgray}\bfseries,
+    ndkeywordstyle=\color{green}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{blue}\ttfamily,
+    morestring=[s]{`}{'},
+%    morestring=[b]"
+}
+
+\lstset{
+    language=JavaScript,
+    backgroundcolor=\color{lightgray},
+    extendedchars=true,
+    basicstyle=\footnotesize\ttfamily,
+    %basicstyle=\footnotesize\sffamily,
+    showstringspaces=false,
+    showspaces=false,
+%    numbers=left,
+%    numberstyle=\footnotesize,
+%    numbersep=9pt,
+    tabsize=2,
+    breaklines=true,
+    showtabs=false,
+    captionpos=b
+    emph={= },
+    emphstyle=\color{green}
+}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+
+\newcommand{\minitab}[2][1]{\begin{tabular}{#1}#2\end{tabular}}
+
+\title{I Can See You Brain: Investigating Home-Use Electroencephalography System Security}
+
+
+\begin{document}
+\maketitle
+\input{abstract}
+\input{introduction}
+\input{related}
+\input{background}
+\input{framework}
+\input{attack}
+\input{inference}
+\input{performance}
+\input{conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{paper}
+%\input{appendix}
+\end{document}
