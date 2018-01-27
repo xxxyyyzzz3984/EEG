@@ -1,0 +1,262 @@
+\documentclass[acmlarge]{acmart}
+
+\usepackage{booktabs} % For formal tables
+
+\usepackage{listings, color, caption}
+
+\usepackage{makecell}
+\usepackage{xspace}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+\SetAlFnt{\small}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+\SetAlCapHSkip{0pt}
+\IncMargin{-\parindent}
+
+% Metadata Information
+\acmJournal{PACMHCI}
+\acmVolume{9}
+\acmNumber{4}
+\acmArticle{39}
+\acmYear{2010}
+\acmMonth{3}
+\acmArticleSeq{11}
+
+
+\graphicspath{ {images/} }
+
+%\acmBadgeR[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
+%\acmBadgeL[http://ctuning.org/ae/ppopp2016.html]{ae-logo}
+
+
+% Copyright
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+% DOI
+\acmDOI{0000001.0000001}
+
+% Paper history
+%\received{February 2007}
+%\received{March 2009}
+%\received[accepted]{June 2009}
+\lstdefinelanguage{JavaScript}{
+    keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+    keywordstyle=\color{blue}\bfseries,
+    ndkeywords={class, export, boolean, throw, implements, import, this},
+    %ndkeywordstyle=\color{darkgray}\bfseries,
+    ndkeywordstyle=\color{green}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=false,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    commentstyle=\color{purple}\ttfamily,
+    stringstyle=\color{blue}\ttfamily,
+    morestring=[s]{`}{'},
+%    morestring=[b]"
+}
+
+\lstset{
+    language=JavaScript,
+    backgroundcolor=\color{lightgray},
+    extendedchars=true,
+    basicstyle=\footnotesize\ttfamily,
+    %basicstyle=\footnotesize\sffamily,
+    showstringspaces=false,
+    showspaces=false,
+%    numbers=left,
+%    numberstyle=\footnotesize,
+%    numbersep=9pt,
+    tabsize=2,
+    breaklines=true,
+    showtabs=false,
+    captionpos=b
+    emph={= },
+    emphstyle=\color{green}
+}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+% limits underneath
+\DeclareMathOperator*{\argminA}{arg\,min} % Jan Hlavacek
+\DeclareMathOperator*{\argminB}{argmin}   % Jan Hlavacek
+\DeclareMathOperator*{\argminC}{\arg\min}   % rbp
+\DeclareMathOperator*{\argmax}{argmax} 
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+% Document starts
+\begin{document}
+% Title portion
+\title{I Can See You Brain: Investigating Home-Use Electroencephalography System Security}
+%\titlenote{We can add a note to the title}
+
+\author{Yinhao Xiao}
+%\authornote{This is the corresponding author}
+%\orcid{1234-5678-9012-3456}
+\affiliation{%
+  \institution{The George Washington University}
+  \streetaddress{2121 Eye Street, NW}
+  \city{Washington, DC}
+  \state{DC}
+  \postcode{20052}
+  \country{USA}}
+\email{xyh3984@gwu.edu}
+
+\author{Yizhen Jia}
+\affiliation{%
+  \institution{The George Washington University}
+  \streetaddress{2121 Eye Street, NW}
+  \city{Washington, DC}
+  \state{DC}
+  \postcode{20052}
+  \country{USA}}
+\email{chen2015@gwmail.gwu.edu}
+
+\author{Xiuzhen Cheng}
+\affiliation{%
+  \institution{The George Washington University}
+  \streetaddress{2121 Eye Street, NW}
+  \city{Washington, DC}
+  \state{DC}
+  \postcode{20052}
+  \country{USA}}
+\email{cheng@gwu.edu}
+
+\author{Zhenkai Liang}
+\affiliation{%
+  \institution{National University of Singapore}
+  \streetaddress{21 Lower Kent Ridge Road}
+  \postcode{119077}
+  \country{Singapore}}
+\email{liangzk@comp.nus.edu.sg}
+
+\author{Zhi Tian}
+\affiliation{%
+  \institution{George Mason University}
+  \streetaddress{4400 University Dr}
+  \city{Fairfax}
+  \state{VA}
+  \postcode{22030}
+  \country{USA}}
+\email{ztian1@gmu.edu}
+
+
+\begin{abstract}
+Health-related IoT devices are getting more and more popular in recent years. On one hand, users can access information of their health conditions more conveniently than ever before with these devices; on the other hand, they are exposed to new security risks that are impossible to occur in traditional IoT devices. In this paper, we presented, to the best of our knowledge, the \emph{first} in-depth security analysis on home-use electroencephalography (EEG) IoT devices. Our key contributions are twofold. First, we reversely engineered the home-use EEG system framework via which we identified the design and implementation flaws. By exploiting these flaws, we developed two sets of novel easy-to-exploit PoC attacks, which consist of four remote attacks and one proximate attack. In a remote attack, an attacker can steal a user's brain wave data through a carefully crafted program while in the proximate attack, the attacker can steal a victim's brain wave data over-the-air without accessing the victim's device on any sense when he is close to the victim. As a result, all the 156 brain-computer interface (BCI) apps in the NeuroSky App store are vulnerable to the proximate attack. We also  discovered that all the 31 free apps in the NeuroSky App store are vulnerable to at least one remote attack via an empirical static binary analysis. %, with 32\% of the apps are vulnerable to all of our remote attacks. 
+Second, we proposed a novel deep learning model of a joint recurrent convolutional neural network (RCNN) to infer a user's activities based on the reduced-featured EEG data stolen from the home-use EEG IoT devices, and our evaluation over the realworld EEG data indicates that the inference accuracy of the proposed RCNN is as high as 70.55\%, which significantly outperforms 11 other well-known learning models.
+\end{abstract}
+
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below.
+%
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010520.10010553.10010562</concept_id>
+  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010575.10010755</concept_id>
+  <concept_desc>Computer systems organization~Redundancy</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010553.10010554</concept_id>
+  <concept_desc>Computer systems organization~Robotics</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10003033.10003083.10003095</concept_id>
+  <concept_desc>Networks~Network reliability</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Computer systems organization~Embedded systems}
+\ccsdesc[300]{Computer systems organization~Redundancy}
+\ccsdesc{Computer systems organization~Robotics}
+\ccsdesc[100]{Networks~Network reliability}
+
+%
+% End generated code
+%
+
+
+\keywords{Wireless sensor networks, media access control,
+multi-channel, radio interference, time synchronization}
+
+% DO NOT use this command unless you want to change
+% the default behavior
+% \authorsaddresses{Authors' addresses: G.~Zhou, Computer Science
+%   Department, College of William and Mary, 104 Jameson Rd,
+%   Williamsburg, PA 23185, US, \path{gzhou@wm.edu}; V.~B\'eranger,
+%   Inria Paris-Rocquencourt, Rocquencourt, France; A.~Patel, Rajiv
+%   Gandhi University, Rono-Hills, Doimukh, Arunachal Pradesh, India;
+%   H.~Chan, Tsinghua University, 30 Shuangqing Rd, Haidian Qu, Beijing
+%   Shi, China; T.~Yan, Eaton Innovation Center, Prague, Czech Republic;
+%   T.~He, C.~Huang, J.~A.~Stankovic University of Virginia, School of
+%   Engineering Charlottesville, VA 22903, USA; T. F. Abdelzaher,
+%   (Current address) NASA Ames Research Center, Moffett Field,
+%   California 94035.}
+
+\maketitle
+
+% The default list of authors is too long for headers.
+\renewcommand{\shortauthors}{G. Zhou et al.}
+
+\input{paper-body}
+
+
+
+\end{document}
