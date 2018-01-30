@@ -1,0 +1,11 @@
+\section{Defense Solutions}
+\label{sec:defense}
+
+In this section, we demonstrate defense solutions to mitigate our proposed attacks. For mitigating the remote attacks, we propose an OAuth-based framework to mitigate unauthorized applications exploting standard SDK and TGSP, and a signature-based solution to mitigate malicious SDK and malicious TGSP server. For mitigating the proximate attacks, we propose an encryption-based solution to eliminate possible eavesdropping and replay attacks.
+
+\subsection{Solutions to Mitigate Remote Attacks}
+
+\subsubsection{OAuth-based Framework}
+The root cause of EEG data leakage to malicious applications through SDK and TGSP is because the ThinkGear framework lacks necessary authentication/authorization. Having noticed the cause, we realize that OAuth~\cite{hardt2012oauth}, a well-known authorization and authentication protocol, can be applied to the ThinkGear framework in order to eliminate attacks resulting from unauthorized malicious applications.
+
+We demonstrate in details how OAuth 2.0 authorization code granting protocol can be applied to ThinkGear framework. To begin with, NeuroSky has to maintain a service-providing server on which all BCI-app developers have to register their BCI apps, and each BCI app is assigned with an app ID and an app secret (normally a random hash given by the service-providing server). If a BCI app wishes to access a user's EEG data, either through TGSP or SDK, the TGSP server or \texttt{thinkgear.dll}
