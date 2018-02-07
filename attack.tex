@@ -31,21 +31,21 @@ In a static DLL injection attack, an attacker can simply replace the benign DLL 
 
 \begin{figure}[!htb]
         \centering
-        \includegraphics[width=\linewidth]{getvaluebin.png}
+        \includegraphics[scale=0.6]{getvaluebin.png}
         \caption{The binary codes of \texttt{TG\_GetValue} in \texttt{thinkgear.dll} of a successful data return. As one can see, the \texttt{dataType} parameter is passed to \texttt{EAX} and the returned value is passed to \texttt{st0}.}
         \label{fig:getvaluebin}
 \end{figure}
 
 \begin{figure}[!htb]
         \centering
-        \includegraphics[width=\linewidth]{injectedshell.png}
+        \includegraphics[scale=0.6]{injectedshell.png}
         \caption{The ending part of \texttt{.text} of \texttt{thinkgear.dll}; the red-bordered region includes the injected shellcode.}
         \label{fig:injectshell}
 \end{figure}
 
 \begin{figure}[!htb]
         \centering
-        \includegraphics[width=\linewidth]{remote_attack_conf.png}
+        \includegraphics[scale=0.4]{remote_attack_conf.png}
         \caption{Configuration of the remote attack. An attacker is on the left side with a HackRF collecting the victim's EEG data emitted from the brain wave headset by means of SDR waves. The right side is the victim's PC with a RF dongle receiving the SDR waves.}
         \label{fig:remoteattackconf}
 \end{figure}
@@ -54,13 +54,13 @@ In a static DLL injection attack, an attacker can simply replace the benign DLL 
 
 \begin{figure*}[!htb]
         %\quad
-        \begin{subfigure}[t]{0.5\textwidth}
-          \includegraphics[width=1\linewidth]{record_graph.png}
+        \begin{subfigure}[t]{0.45\textwidth}
+          \includegraphics[scale=0.5]{record_graph.png}
                 \caption{Flowgraph for Recording}
                 \label{fig:recordgraph}
         \end{subfigure}
-        \begin{subfigure}[t]{0.5\textwidth}
-          \includegraphics[width=1\linewidth]{replay_graph.png}
+        \begin{subfigure}[t]{0.45\textwidth}
+          \includegraphics[scale=0.5]{replay_graph.png}
                 \caption{Flowgraph for Replaying}
                 \label{fig:replaygraph}
         \end{subfigure}%

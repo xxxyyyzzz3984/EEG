@@ -11,8 +11,8 @@ The root cause of EEG data leakage to malicious applications through SDK and TGS
 We demonstrate in details how OAuth 2.0 implicit granting protocol can be applied to ThinkGear framework. To begin with, NeuroSky has to maintain a service-providing server on which all BCI-app developers have to register their BCI apps, and each BCI app is assigned with an app ID and an app secret (normally a random hash given by the service-providing server). If a BCI app wishes to access a user's EEG data through TGSP or SDK, the TGSP server or \texttt{thinkgear.dll} then redirects the user to the service-providing server along with the requesting app ID and app secret. In this case, the service-providing server first checks if the requesting app ID and app secret match as the ones the developer registered. If they are not matched with any records, the request will be denied directly. If they are matched with one of the record, the user will be asked by the service-providing server whether or not the user wishes to grant the permission to the app to access his EEG data. If granted, the service-providing server passes an access token back to the TGSP server or the \texttt{thinkgear.dll}, and the TGSP server or the \texttt{thinkgear.dll} further passes the token to the BCI app. Then the BCI app can authenticate itself with the TGSP server or \texttt{thinkgear.dll} for EEG data using the access token. The overview of the protocol is shown as figure~\ref{fig:oauth}.
 
 \begin{figure}[!htb]
-        \centering
-        \includegraphics[width=\linewidth]{oauth.png}
+\hspace*{2cm}
+        \includegraphics[scale=0.4]{oauth.png}
 	\caption{The OAuth 2.0 implicit granting protocol applied to ThinkGear framework. }
         \label{fig:oauth}
 \end{figure}
