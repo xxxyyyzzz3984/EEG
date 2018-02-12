@@ -37,6 +37,7 @@ where \texttt{poorSignalLevel} specifies the poorness level (ranging from 0 to 2
 \centering
 \caption{TGSP Raw Packet Structure}
 \label{tbl:basicpacket}
+\scalebox{0.8}{
 \begin{tabular}{llcccc}
 \hline \hline
 \multicolumn{2}{|r|}{SYNC}  & \multicolumn{1}{c|}{SYNC}     & \multicolumn{1}{c|}{PLENGTH}                                                      & \multicolumn{1}{c|}{PAYLOAD}                                                  & \multicolumn{1}{c|}{CHECKSUM}                                                                            \\ \hline \hline
@@ -44,6 +45,7 @@ where \texttt{poorSignalLevel} specifies the poorness level (ranging from 0 to 2
 \multicolumn{1}{|l|}{Size}    & \multicolumn{1}{l|}{1 byte} & \multicolumn{1}{c|}{1 byte}                                                       & \multicolumn{1}{c|}{1 byte}                                                       & \multicolumn{1}{c|}{PLENGTH}                                                  & \multicolumn{1}{c|}{1 byte}                                                                              \\ \hline
                               &                             & \multicolumn{1}{l}{}                                                              & \multicolumn{1}{l}{}                                                          & \multicolumn{1}{l}{}                                                                                    
 \end{tabular}
+}
 \end{table}
 
 %%%%%% DataRow Structure
@@ -51,6 +53,7 @@ where \texttt{poorSignalLevel} specifies the poorness level (ranging from 0 to 2
 \centering
 \caption{Raw \texttt{DataRow} Structure}
 \label{tbl:datarow}
+\scalebox{0.8}{
 \begin{tabular}{llccc}
 \hline \hline
 \multicolumn{2}{|r|}{(EXCODE)}                                  & \multicolumn{1}{c|}{CODE}                                                    & \multicolumn{1}{c|}{(VLENGTH)}                                                & \multicolumn{1}{c|}{VALUE}                                                       \\ \hline \hline
@@ -58,6 +61,7 @@ where \texttt{poorSignalLevel} specifies the poorness level (ranging from 0 to 2
 \multicolumn{1}{|l|}{Size}    & \multicolumn{1}{l|}{Undefined} & \multicolumn{1}{c|}{1 byte}                                                  & \multicolumn{1}{c|}{1 byte}                                                   & \multicolumn{1}{c|}{VLENGTH}                                                  \\ \hline
                               &                                 & \multicolumn{1}{l}{}                                                         & \multicolumn{1}{l}{}                                                          & \multicolumn{1}{l}{}                                                            
 \end{tabular}
+}
 \end{table}
 
 \subsection{Headset Side}
@@ -70,7 +74,7 @@ In the EEG system framework, the TGAM chip in a headset collects user's EEG sign
 
 \begin{figure}[!htb]
         \centering
-        \includegraphics[scale=0.6]{sdr_sample.png}
+        \includegraphics[scale=0.4]{sdr_sample.png}
         \caption{A sample of the TGAM SDR wave. The center frequency is roughly $2458.4$ MHz and the occupied bandwidth is approximately $1$ MHz.}
         \label{fig:sdrsample}
 \end{figure}

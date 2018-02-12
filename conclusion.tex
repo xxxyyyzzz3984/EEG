@@ -3,18 +3,3 @@
 
 In this paper, we conducted a thorough security analysis on a typical home-use EEG IoT device, the NeuroSky EEG device. We first demystified the NeuroSky EEG system framework and identified its security weaknesseses via which we implemented two novel easy-to-exploit attack vectors containing four remote attacks and one proximate attack. An attacker can steal a victim's brain wave data via any of the attacks. We further conducted an empirical analysis on the BCI apps in the official NeuroSky App store and found that (i) all 156 apps are vulnerable to our proximate attack, and (ii) all free apps are vulnerable to either the malicious TGSP server attack, or the malicious SDK attack, with 32\% of them vulnerable to both attacks. Moreover, we constructed a novel deep learning model to infer user's sensitive activities based on the reduced-featured EEG data collected by the home-use NeuroSky EEG device and obtained an accuracy as high as 70.55\%, which far exceeds those of the other 11 well-known and widely-used classifiers we compared against. 
 
-
-\begin{acks}
-
-The authors would like to thank Dr. Maura Turolla of Telecom
-Italia for providing specifications about the application scenario.
-
-The work is supported by the \grantsponsor{GS501100001809}{National
-  Natural Science Foundation of
-  China}{http://dx.doi.org/10.13039/501100001809} under Grant
-No.:~\grantnum{GS501100001809}{61273304\_a}
-and~\grantnum[http://www.nnsf.cn/youngscientists]{GS501100001809}{Young
-  Scientists' Support Program}.
-
-
-\end{acks}
